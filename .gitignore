@@ -1,0 +1,4 @@
+# Keep the published result; ignore reviewer-generated results.
+/results/*
+!/results/massive-run-article/
+!/results/massive-run-article/**

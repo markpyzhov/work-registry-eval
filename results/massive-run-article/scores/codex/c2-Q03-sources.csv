@@ -1,0 +1,9 @@
+session_id,correctness,missing_facts,citations_total,citations_valid
+c2-Q03-claude-baseline-r1,0,2,1,1
+c2-Q03-claude-sources-r1,0,0,6,6
+c2-Q03-claude-sources-r2,0,0,5,5
+c2-Q03-claude-sources-r3,0,0,7,7
+c2-Q03-codex-baseline-baseline-r1,0,1,0,0
+c2-Q03-codex-rag-sources-r1,0,1,2,2
+c2-Q03-codex-rag-sources-r2,0,1,2,2
+c2-Q03-codex-rag-sources-r3,0,1,2,2

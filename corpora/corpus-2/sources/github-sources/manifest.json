@@ -1,0 +1,288 @@
+[
+  {
+    "path": "issues/opentelemetry-go-7549.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/7549",
+      "artifact_type": "issue",
+      "author": "pellared",
+      "created_at": "2025-10-06T17:08:06Z",
+      "updated_at": "2025-11-03T13:06:55Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "issues/opentelemetry-go-contrib-5946.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/issues/5946",
+      "artifact_type": "issue",
+      "author": "zacklpx",
+      "created_at": "2024-07-25T03:50:39Z",
+      "updated_at": "2025-07-03T13:28:05Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "issues/opentelemetry-go-contrib-7254.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/issues/7254",
+      "artifact_type": "issue",
+      "author": "XSAM",
+      "created_at": "2025-04-23T02:21:22Z",
+      "updated_at": "2026-01-13T15:23:09Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "issues/opentelemetry-go-contrib-8059.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/issues/8059",
+      "artifact_type": "issue",
+      "author": "codeboten",
+      "created_at": "2025-10-22T21:25:29Z",
+      "updated_at": "2026-04-03T11:34:34Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "issues/opentelemetry-go-contrib-8078.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/issues/8078",
+      "artifact_type": "issue",
+      "author": "nicholasngai",
+      "created_at": "2025-10-27T23:28:07Z",
+      "updated_at": "2025-10-31T09:47:48Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "issues/sig-security-164.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/sig-security/issues/164",
+      "artifact_type": "issue",
+      "author": "trask",
+      "created_at": "2025-08-27T13:31:30Z",
+      "updated_at": "2026-01-28T22:16:50Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3389930076.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3389930076",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2025-10-10T12:53:12Z",
+      "updated_at": "2025-10-10T12:54:14Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3389972183.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3389972183",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2025-10-10T13:03:41Z",
+      "updated_at": "2025-10-10T13:04:17Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3390010099.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3390010099",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2025-10-10T13:10:44Z",
+      "updated_at": "2025-10-10T14:04:27Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3479584781.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3479584781",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2025-11-03T09:18:08Z",
+      "updated_at": "2025-11-03T09:18:08Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3479626706.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3479626706",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2025-11-03T09:30:26Z",
+      "updated_at": "2025-11-03T09:30:26Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3479655348.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3479655348",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2025-11-03T09:39:04Z",
+      "updated_at": "2025-11-03T09:40:01Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3581463689.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3581463689",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2025-11-26T14:02:28Z",
+      "updated_at": "2025-11-26T16:36:01Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "meeting-notes/entry-3974113940.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3974113940",
+      "artifact_type": "meeting-note",
+      "author": "pellared",
+      "created_at": "2026-02-27T17:20:46Z",
+      "updated_at": "2026-02-27T17:21:05Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "milestones/milestone-11866121.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/milestone/26",
+      "artifact_type": "milestone",
+      "author": "pellared",
+      "created_at": "2024-11-08T11:22:34Z",
+      "updated_at": "2026-04-03T11:34:38Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "milestones/milestone-13145551.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/milestone/74",
+      "artifact_type": "milestone",
+      "author": "pellared",
+      "created_at": "2025-06-25T19:56:24Z",
+      "updated_at": "2025-12-08T16:55:20Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "milestones/milestone-13661613.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/milestone/76",
+      "artifact_type": "milestone",
+      "author": "MrAlias",
+      "created_at": "2025-09-11T17:31:20Z",
+      "updated_at": "2026-02-02T17:59:40Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "milestones/milestone-14282228.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/milestone/34",
+      "artifact_type": "milestone",
+      "author": "MrAlias",
+      "created_at": "2025-12-04T18:13:58Z",
+      "updated_at": "2026-02-02T19:23:35Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "pulls/community-3000.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/community/pull/3000",
+      "artifact_type": "pull-request",
+      "author": "jaydeluca",
+      "created_at": "2025-09-19T10:11:57Z",
+      "updated_at": "2025-12-02T08:40:24Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "pulls/opentelemetry-go-7403.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/pull/7403",
+      "artifact_type": "pull-request",
+      "author": "pellared",
+      "created_at": "2025-09-23T17:31:54Z",
+      "updated_at": "2025-10-16T19:07:47Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "pulls/opentelemetry-go-7427.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/pull/7427",
+      "artifact_type": "pull-request",
+      "author": "dashpole",
+      "created_at": "2025-09-29T14:36:56Z",
+      "updated_at": "2025-10-14T14:40:27Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "pulls/opentelemetry-go-7443.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/pull/7443",
+      "artifact_type": "pull-request",
+      "author": "dashpole",
+      "created_at": "2025-10-02T13:56:40Z",
+      "updated_at": "2025-12-15T15:00:11Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "pulls/opentelemetry-go-7474.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/pull/7474",
+      "artifact_type": "pull-request",
+      "author": "dashpole",
+      "created_at": "2025-10-08T14:31:21Z",
+      "updated_at": "2025-12-11T16:56:31Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "pulls/opentelemetry-go-contrib-6609.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/pull/6609",
+      "artifact_type": "pull-request",
+      "author": "Yiling-J",
+      "created_at": "2025-01-13T13:45:43Z",
+      "updated_at": "2025-11-13T01:26:12Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "pulls/opentelemetry-go-contrib-8014.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/pull/8014",
+      "artifact_type": "pull-request",
+      "author": "nicksherron",
+      "created_at": "2025-10-14T04:01:24Z",
+      "updated_at": "2025-10-17T10:42:07Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  },
+  {
+    "path": "releases/release-v1.39.0.json",
+    "source": {
+      "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/releases/tag/v1.39.0",
+      "artifact_type": "release",
+      "author": "MrAlias",
+      "created_at": "2025-12-08T16:32:32Z",
+      "updated_at": "2025-12-08T16:45:46Z",
+      "collected_at": "2026-07-14T14:35:41Z"
+    }
+  }
+]

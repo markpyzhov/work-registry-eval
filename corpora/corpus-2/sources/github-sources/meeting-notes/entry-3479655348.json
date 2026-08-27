@@ -1,0 +1,57 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3479655348",
+    "artifact_type": "meeting-note",
+    "author": "pellared",
+    "created_at": "2025-11-03T09:39:04Z",
+    "updated_at": "2025-11-03T09:40:01Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3479655348",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3479655348",
+    "issue_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/6648",
+    "id": 3479655348,
+    "node_id": "IC_kwDOCya1Uc7PZ1O0",
+    "user": {
+      "login": "pellared",
+      "id": 5067549,
+      "node_id": "MDQ6VXNlcjUwNjc1NDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5067549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pellared",
+      "html_url": "https://github.com/pellared",
+      "followers_url": "https://api.github.com/users/pellared/followers",
+      "following_url": "https://api.github.com/users/pellared/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pellared/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pellared/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pellared/subscriptions",
+      "organizations_url": "https://api.github.com/users/pellared/orgs",
+      "repos_url": "https://api.github.com/users/pellared/repos",
+      "events_url": "https://api.github.com/users/pellared/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pellared/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2025-11-03T09:39:04Z",
+    "updated_at": "2025-11-03T09:40:01Z",
+    "body": "**Date:** 2025-10-30\n\n**Attendees:**\n- Tyler Yahn\n- Bryan Boreham\n- Damien Mathieu\n- Robert Pająk\n- David Ashpole\n- Mike Blum\n\n## Transcript\n\n### Monitoring bugs reported by OSS-Fuzz\n- David proposed enabling automatic filing of OSS-Fuzz findings as GitHub issues to track and triage them in-repo.\n- Robert noted OSS-Fuzz runs in Google CI; access and notifications currently limited. Some maintainers may need to be added as contacts.\n- Tyler and David highlighted that OSS-Fuzz does not file public issues by default due to potential security sensitivity of fuzz findings.\n- Consensus:\n  - Start by setting up a maintainers mailing list for OSS-Fuzz notifications (via GC) and trial monitoring for a few months.\n  - Avoid enabling public GitHub issue filing for now; reassess after triage/verification workflows are in place.\n  - Robert can manually recreate older issues if needed.\n- Bryan shared Prometheus project’s recent discussion comparing OSS-Fuzz with Go’s built-in fuzzing; Robert emphasized OSS-Fuzz’s continuous background fuzzing as a benefit.\n\nReferences:\n- [Monitoring bugs reported by OSS Fuzz #7549](https://github.com/open-telemetry/opentelemetry-go/issues/7549)\n\n### Stabilization of otelgrpc\n- Community request to stabilize otelgrpc noted by Tyler.\n- Blockers:\n  - Stabilization of RPC semantic conventions (semconv) must come first.\n  - Audit of the current otelgrpc API to remove cruft and confirm stability.\n- Damien clarified that stabilization does not imply restoring the old interceptor—it should remain removed.\n- David is willing to drive module stability once semconv stabilizes; however, gRPC engagement has been sporadic and driven by their internal roadmap.\n- Strategy discussion:\n  - OTel could continue owning and maintaining a gRPC instrumentation package, with the option to deprecate later if gRPC ships native instrumentation aligned with semconv.\n  - Seek more engagement from gRPC; attempt in-person conversations at KubeCon if possible. David will sync with Josh on outreach.\n- Conclusion: Not likely to stabilize this year; set a goal to finalize a strategy next year once semconv progress is clearer.\n\nReferences:\n- [Stabilization of otelgrpc](https://github.com/open-telemetry/opentelemetry-go-contrib/issues/8078)?\n  - Related: [https://github.com/grpc/grpc-go/issues/8265](https://github.com/grpc/grpc-go/issues/8265)  \n  - We need the semconv to stabilize  \n  - There needs to be involvement from gRPC to progress this  \n  - [David] Update: I’m told that the SIG is active and is working towards stabilization. Not sure if gRPC is involved.  \n\n### Stabilization of otelhttp\n- Damien proposed starting an API audit for otelhttp to move towards stabilization.\n- A known bug (issue #7254) may be the only blocker; it’s a behavioral change around how errors are marked (events vs attributes) and interacts with semconv/spec wording.\n- Agreement:\n  - Begin the API review.\n  - Robert will take ownership of #7254 and draft a document clarifying interpretation and proposed resolution.\n  - The existence of bugs does not inherently block stabilization; they can be fixed post-stabilization if changes are non-breaking or properly versioned.\n\nReferences:\n- Blocker (only one I think): [https://github.com/open-telemetry/opentelemetry-go-contrib/issues/7254](https://github.com/open-telemetry/opentelemetry-go-contrib/issues/7254)  \n\n### OTel Explorer Go docs\n- Mike outlined a project to revamp the OTEL registry/explorer with a schema that documents spans/metrics emitted by instrumentations, aiming to render via Hugo and enable static analysis across Go SDKs and contrib modules.\n- Tyler’s feedback:\n  - Strong requirement: align schema with semantic conventions and ensure it’s compatible with Weaver (to enable validation and transformations across versions).\n  - Consider providing a JSON Schema (or CUE) for validation and potentially linking to existing semconv definitions to keep the spec concise.\n  - Scope can include eBPF/auto-instrumentation; representation should still fit the schema as long as it maps to OTEL signals.\n- Mike will iterate on the schema, explore Weaver integration, and coordinate with SIGs as needed.\n\nReferences:\n  - Context: [https://github.com/open-telemetry/community/pull/3000](https://github.com/open-telemetry/community/pull/3000)  \n  - Meeting notes: [Ecosystem Explorer Project](https://docs.google.com/document/d/1QBpFmSR54fGus8q6RraUj0-mEjSoX7S7fdlgsvxZsuk/edit?usp=sharing)  \n  - [https://github.com/mikeblum/otel-explorer-go-docs/blob/3797539be4f5a760e99586c0de72496019f5e6b0/instrumentation-list.yaml](https://github.com/mikeblum/otel-explorer-go-docs/blob/3797539be4f5a760e99586c0de72496019f5e6b0/instrumentation-list.yaml)  \n\n### SIG Security: release signing\n- Robert proposed enabling GitHub “signature releases” in addition to existing tag signing and GPG signatures of source archives.\n- Key points:\n  - GitHub’s source tarball/zip is generated at download time; signing artifacts strengthens trust and mitigates changes over time.\n  - Double-signing is acceptable and beneficial for OSS Scorecard/compliance.\n  - Constraint: Artifacts must be uploaded at release time; cannot regenerate later.\n- Decision: Proceed with enabling signature releases; update release documentation and ensure process discipline.\n\nReferences:\n- [https://github.com/open-telemetry/sig-security/issues/164](https://github.com/open-telemetry/sig-security/issues/164)  \n\n### KubeCon updates\n- OpenTelemetry Observatory booth confirmed.\n- Go SIG will meet at the booth (Tuesday morning, local time; check published schedule).\n- Plan to cancel the Zoom SIG meeting during KubeCon week; reminder will be sent next week.\n- Community encouraged to stop by the booth and participate.\n\n## Action Items\n- Robert:\n  - Work with GC to set up a maintainers mailing list for OSS-Fuzz notifications and ensure appropriate access for Go SIG maintainers.\n  - Consider manual recreation of older OSS-Fuzz issues if needed; revisit auto GitHub issue filing after triage process matures.\n  - Take ownership of otelhttp issue [#7254](https://github.com/open-telemetry/opentelemetry-go-contrib/issues/7254); draft a document clarifying error marking approach and semconv alignment.\n  - Enable GitHub signature releases for OTel Go; update releasing docs; ensure artifacts are uploaded at release time and signatures published. Reference: [sig-security #164](https://github.com/open-telemetry/sig-security/issues/164).\n- Damien:\n  - Open an issue to kick off an audit of the otelhttp API for stabilization and coordinate reviews.\n- David (dashpole):\n  - Monitor semconv RPC stabilization efforts; once stable, drive otelgrpc module stabilization.\n  - Sync with Josh regarding gRPC team engagement; explore KubeCon conversations if feasible.\n- Mike:\n  - Iterate on the otel Explorer Go docs schema:\n    - Align with OTEL semantic conventions.\n    - Ensure Weaver compatibility.\n    - Provide a JSON Schema (or CUE) for validation.\n    - Consider linking instrumentations to existing semconv references.\n- Tyler:\n  - Assign relevant GitHub tasks/issues from this meeting.\n  - Confirm KubeCon schedule and cancel the Zoom SIG meeting during KubeCon week; share booth details with the community.",
+    "author_association": "MEMBER",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3479655348/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+}

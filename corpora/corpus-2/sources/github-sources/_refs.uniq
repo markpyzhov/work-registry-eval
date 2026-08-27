@@ -1,0 +1,13 @@
+open-telemetry/community#3000
+open-telemetry/opentelemetry-go#7403
+open-telemetry/opentelemetry-go#7427
+open-telemetry/opentelemetry-go#7443
+open-telemetry/opentelemetry-go#7474
+open-telemetry/opentelemetry-go#7549
+open-telemetry/opentelemetry-go-contrib#5946
+open-telemetry/opentelemetry-go-contrib#6609
+open-telemetry/opentelemetry-go-contrib#7254
+open-telemetry/opentelemetry-go-contrib#8014
+open-telemetry/opentelemetry-go-contrib#8059
+open-telemetry/opentelemetry-go-contrib#8078
+open-telemetry/sig-security#164

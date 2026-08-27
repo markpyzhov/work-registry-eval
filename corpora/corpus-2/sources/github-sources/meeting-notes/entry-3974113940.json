@@ -1,0 +1,57 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3974113940",
+    "artifact_type": "meeting-note",
+    "author": "pellared",
+    "created_at": "2026-02-27T17:20:46Z",
+    "updated_at": "2026-02-27T17:21:05Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3974113940",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3974113940",
+    "issue_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/6648",
+    "id": 3974113940,
+    "node_id": "IC_kwDOCya1Uc7s4CqU",
+    "user": {
+      "login": "pellared",
+      "id": 5067549,
+      "node_id": "MDQ6VXNlcjUwNjc1NDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5067549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pellared",
+      "html_url": "https://github.com/pellared",
+      "followers_url": "https://api.github.com/users/pellared/followers",
+      "following_url": "https://api.github.com/users/pellared/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pellared/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pellared/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pellared/subscriptions",
+      "organizations_url": "https://api.github.com/users/pellared/orgs",
+      "repos_url": "https://api.github.com/users/pellared/repos",
+      "events_url": "https://api.github.com/users/pellared/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pellared/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2026-02-27T17:20:46Z",
+    "updated_at": "2026-02-27T17:21:05Z",
+    "body": "**Date:** 2025-11-27  \n\n## Attendees\n\n- Robert Pająk  \n- Damien Mathieu  \n- Nico Hertz  \n- Michal Jarmolkiewicz  \n- Bryan Boreham  \n\n## Discussions\n\n### 1. PR Review Request (Profiling / Runtime Tracer)\n\n- Request for reviews on Nico’s PR related to Go runtime profiling (`pprof`) integration.\n- Current behavior: each span creates a runtime tracing **task**, which introduces noise in profiles.\n- Proposal:\n  - Provide more control over task/region creation.\n  - Different modes:\n    - **Default**: create a task only for the root span.\n    - **Auto mode**: task for root span, regions for child spans.\n    - **Manual mode**: explicit task/region instrumentation by the user.\n  - Optional async-style hint to indicate spans that cross goroutines.\n- Key considerations:\n  - Tasks can span multiple goroutines; regions must stay within a single goroutine.\n  - Changing public tracing APIs is sensitive and tightly coupled to the specification.\n  - Risk of breaking changes for existing instrumentation (e.g., Kafka libraries).\n- Recommendation:\n  - Start with a smaller, incremental change (e.g., ability to disable runtime tracing integration).\n  - Open an issue describing:\n    - Problem statement\n    - Alternatives\n    - Pros/cons\n    - Links to Go runtime and `pprof` semantics\n  - Keep current large PR as draft / proof of concept.\n\n### 2. Reviews & Contributor Support\n\n- Maintainers emphasized the need for **more PR reviews** (reviews from non-approvers are valuable).\n- Nico asked for smaller starter tasks.\n  - Suggested areas:\n    - Flaky tests in `opentelemetry-go-contrib`\n    - Open issues in core and contrib repositories\n- Meeting notes and active PR references are pinned in the repository for visibility.\n- Guidance:\n  - Prefer **atomic PRs** (one change per PR).\n  - If a PR contains “and”, it likely should be split.\n  - Assigned issues may be stale — double-check activity before skipping.\n\n### 3. New Contributor Introduction\n\n- Michal introduced himself and offered help.\n- Requested onboarding guidance / buddy support.\n- Recommendations:\n  - Review `CONTRIBUTING.md`\n  - Browse open issues and PRs\n  - Ask on Slack for direction or clarification\n\n### 4. Kafka & Auto-Instrumentation Placement\n\n- Question: Why some auto-instrumentations (e.g., Kafka) live in `opentelemetry-go` instead of `contrib`?\n- Context:\n  - Some instrumentations were historical donations.\n  - Sarama instrumentation was deprecated and moved under Shopify due to lack of maintainers.\n  - Auto-instrumentation landscape in Go is fragmented:\n    - eBPF-based approaches\n    - Compile-time instrumentation\n    - Separate Auto-Instrumentation SIG\n- Recommendation:\n  - Join the Go Auto-Instrumentation SIG meeting.\n  - Use the dedicated Slack channel for deeper discussion.\n\n### 5. Community Announcements\n\n- Reminder: OpenTelemetry event (unconference style) in Brussels, Monday after FOSDEM (early February).\n\n## Decisions\n\n- Do **not** merge large public API changes without prior issue discussion.\n- Proceed incrementally:\n  - Start with a small change (e.g., ability to disable runtime tracer integration).\n- Open an issue to document the profiling proposal before continuing API changes.\n- Keep current large PR as draft/proof of concept.\n\n## Action Items\n\n- [ ] Nico Hertz:\n  - Open an issue describing the runtime profiling problem and proposal (modes, semantics, trade-offs).\n  - Create a smaller PR to allow disabling runtime tracer integration.\n  - Explore flaky test issues in `contrib`.\n- [ ] Maintainers:\n  - Provide onboarding support (buddy/help via Slack) for new contributors.",
+    "author_association": "MEMBER",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3974113940/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+}

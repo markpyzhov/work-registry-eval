@@ -1,0 +1,57 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3581463689",
+    "artifact_type": "meeting-note",
+    "author": "pellared",
+    "created_at": "2025-11-26T14:02:28Z",
+    "updated_at": "2025-11-26T16:36:01Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3581463689",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3581463689",
+    "issue_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/6648",
+    "id": 3581463689,
+    "node_id": "IC_kwDOCya1Uc7VeMyJ",
+    "user": {
+      "login": "pellared",
+      "id": 5067549,
+      "node_id": "MDQ6VXNlcjUwNjc1NDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5067549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pellared",
+      "html_url": "https://github.com/pellared",
+      "followers_url": "https://api.github.com/users/pellared/followers",
+      "following_url": "https://api.github.com/users/pellared/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pellared/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pellared/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pellared/subscriptions",
+      "organizations_url": "https://api.github.com/users/pellared/orgs",
+      "repos_url": "https://api.github.com/users/pellared/repos",
+      "events_url": "https://api.github.com/users/pellared/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pellared/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2025-11-26T14:02:28Z",
+    "updated_at": "2025-11-26T16:36:01Z",
+    "body": "**Date:** 2025-11-20  \n\n## Attendees\n\n- Tyler Yahn  \n- Owen Williams  \n- Sam Xie\n- Alex Boten  \n- David Ashpole  \n- Bryan Boreham  \n- (Mentioned: Robert Pająk)\n\n## Discussions\n\n### 1. Next Go release & OTelConf RC support\n\n- Release blocked on RC support module; PR needs reviews.\n- Requested changes from Alex do not need to be in the current PR.\n- Module is `0.x`; breaking changes acceptable later.\n- Avoid exposing public API known to be removed immediately.\n- Discussed handling experimental features:\n  - `WithExperimentalFeatures`-style flag likely unhelpful.\n  - Possible `x` submodule to clearly isolate experimental APIs.\n  - Aligns with OTel-wide push for opt-in experimental features.\n\n### 2. HTTP default client deprecation (OTel HTTP)\n\n- Work deprecating default HTTP client usage is in progress.\n- `POST`/`GET` helpers rely on `http.DefaultClient` and limit configurability.\n- Follow-up PRs exist; need review for inclusion in upcoming release.\n\n### 3. Observability work & non-blocking PRs\n\n- Several observability PRs (e.g., self-observability for OTel gRPC) are ongoing, not release-blocking.\n- Two non-observability items noted:\n  - Sync map / atomics for fixed bucket histograms.\n  - Exemplar reservoir changes.\n- Safe to slip to next release; include if ready.\n\n### 4. Stabilizing new attribute value types\n\n- Discussion about stabilizing new spec attribute types (byte arrays, “any” type).\n- Prototype implementation exists and needs review.\n- Considered tricky; careful review needed around limits and types.\n\n### 5. Processor `Enabled` method\n\n- Proposal from Robert to move `Enabled` from filter processor to main processor interface.\n- Spec now stabilized and allows this.\n- Pros: consistent API, less ad-hoc type assertion/boilerplate in docs.\n- Con: processors that are “always enabled” need a trivial `Enabled() bool { return true }`.\n- General agreement; will revisit for final confirmation.\n\n### 6. OTLP `insecure` support (logs, env vars, spec)\n\n- PR adds `insecure` (env var) support for OTLP **logs**, matching traces/metrics.\n- HTTP OTLP config historically messy; env vars common in practice.\n- Spec unclear due to moratorium on env vars.\n- Direction: add logs support in Go; push for spec clarity later.\n\n### 7. Collector protobuf changes & PDataGen\n\n- Collector removed dependency on Go protobuf types; now uses `pdataGen`.\n- Large internal rewrite; significant line count reduction.\n- Benchmarks improved (fewer allocations).\n- Some cross-language quirks surfaced but manageable.\n- Go SIG interested in exploring similar approaches; needs more benchmarking.\n\n### 8. KubeCon & talks\n\n- First SIG meeting since KubeCon.\n- Members encouraged to share notable talks and videos once available.\n\n## Decisions\n\n- Merge OTelConf RC support PR as-is (pending normal review).\n- Track experimental API structure review (e.g., `x` submodule) under the `1.40.0` milestone.\n- Add OTLP `insecure` support for logs to align with traces/metrics.\n- Continue supporting env-var config despite lack of formal spec guarantees.\n\n## Action Items\n\n- [ ] **Alex Boten**: Open issue to track evaluation of experimental API structure for the OTelConf RC module; add to `1.40` milestone.\n- [ ] **SIG reviewers**: Review the OTelConf RC support PR.\n- [ ] **Go approvers (not Tyler/David)**: Review PRs for sync-map histograms and exemplar reservoir.\n- [ ] **Contributors**: Review prototype for new attribute value types and limits.\n- [ ] **Tyler / spec contributors**: Consider raising follow-up spec issue for OTLP `insecure` behavior.\n- [ ] **Everyone**: Share notable KubeCon talks/videos in the channel.\n",
+    "author_association": "MEMBER",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3581463689/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+}

@@ -1,0 +1,7 @@
+# A clinic batch includes a scanned invoice with no usable native text layer, so OCR runs. Mid-job an unhandled worker exception fires before any export is finalized. OCR confidence on the page being processed was 82%. As of the **2026-09-22** rule set, what must happen to outputs and temps, what crash report is written, how the 90% manual-review rule applies (or does not) to this abort, and which related audit/OCR implementation items are still unfinished?
+
+<!-- RESPONSE_START -->
+
+Abort the batch; do not export or route it to manual review. A worker exception mandates fail-closed behavior: purge the output buffer and securely delete temps; the atomic final rename means no output should exist pre-export. Write the crash diagnostic to separate `audit_log.json` with stack trace and triggering filename. [Fail-closed evidence](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/communication/sources/slack/2026-06-12-batch-failures.md:12)
+
+The 82% OCR confidence is below the adopted 90% threshold, but the manual-review integration remains active, so it is not a valid recovery path. [CIPH-24](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/tasks/CIPH-24-Manual-Review-Threshold.md:12) OCR scan-pipeline integration is also unfinished, and audit records currently fail schema verification. [CIPH-18](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/tasks/CIPH-18-OCR-Fallback.md:12) [CIPH-26](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/tasks/CIPH-26-Audit-Trail-Logging.md:12)

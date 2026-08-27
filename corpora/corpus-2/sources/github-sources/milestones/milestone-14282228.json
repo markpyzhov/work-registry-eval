@@ -1,0 +1,48 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/milestone/34",
+    "artifact_type": "milestone",
+    "author": "MrAlias",
+    "created_at": "2025-12-04T18:13:58Z",
+    "updated_at": "2026-02-02T19:23:35Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go-contrib/milestones/34",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go-contrib/milestone/34",
+    "labels_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go-contrib/milestones/34/labels",
+    "id": 14282228,
+    "node_id": "MI_kwDODm-2Ns4A2e30",
+    "number": 34,
+    "title": "v1.40.0",
+    "description": null,
+    "creator": {
+      "login": "MrAlias",
+      "id": 5543599,
+      "node_id": "MDQ6VXNlcjU1NDM1OTk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5543599?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MrAlias",
+      "html_url": "https://github.com/MrAlias",
+      "followers_url": "https://api.github.com/users/MrAlias/followers",
+      "following_url": "https://api.github.com/users/MrAlias/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MrAlias/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MrAlias/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MrAlias/subscriptions",
+      "organizations_url": "https://api.github.com/users/MrAlias/orgs",
+      "repos_url": "https://api.github.com/users/MrAlias/repos",
+      "events_url": "https://api.github.com/users/MrAlias/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MrAlias/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "open_issues": 0,
+    "closed_issues": 169,
+    "state": "closed",
+    "created_at": "2025-12-04T18:13:58Z",
+    "updated_at": "2026-02-02T19:23:35Z",
+    "due_on": null,
+    "closed_at": "2026-02-02T19:23:35Z"
+  }
+}

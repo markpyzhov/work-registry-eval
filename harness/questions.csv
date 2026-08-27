@@ -1,0 +1,31 @@
+corpus,key,question
+c1,Q01,"As of the final CipherDoc snapshot on **2026-09-22**, is the toolkit ready to ship v1.0.0? Give a clear go/no-go, name every release gate that is still open, and cite the evidence that keeps each gate from closing."
+c1,Q02,"Docker packaging was once treated as finished. As of **2026-09-22**, what is the authoritative status of that work, what earlier completion claim does it supersede, and what concrete size and CVE outcomes still prevent calling the image release-ready?"
+c1,Q03,"Large-file chunking was merged in mid-August. As of **2026-09-22**, has that completion held? Reconstruct the completion → reopen timeline, the technical root cause, and who owns the next engineering action."
+c1,Q04,"Storage quota monitoring was marked done after a hard-halt check. As of **2026-09-22**, what is the current status, what later evidence reopened it, and what buffer change is underway?"
+c1,Q05,"License compliance looked cleared after a PDF-parser swap, then changed again. As of **2026-09-22**, what is the current license-gate status, what discovery reopened it, and what replacement criteria are in force?"
+c1,Q06,"For closing the v1.0.0 release checklist as of **2026-09-22**, which dependency gates must go green first, and for each material gate name the listed task assignee versus who owns the immediate next action when those differ?"
+c1,Q07,"As of **2026-09-22**, which CipherDoc tasks are blocked, and for each is the block upstream/external or internal? State the root cause and the listed task assignee."
+c1,Q08,"Windows compatibility produced a working build artifact. As of **2026-09-22**, is the Windows release gate cleared? Separate engineering completion from the remaining release hold and say what still has to happen."
+c1,Q09,"Beyond Docker and Windows packaging, which compliance and audit items still hold v1.0.0 as of **2026-09-22**? For each, give current status, the concrete defect or risk, and whether engineering search alone can close it."
+c1,Q10,"Write a concise cross-workstream management briefing as of **2026-09-22** covering at least three workstreams: at least two completed milestones that still hold, at least three items of work that were completed then reopened, at least two durable blockers, and the top risks that should escalate before ship. Do not present reopened work as done."
+c1,Q11,"On the critical path to clearing the security-gate hold, what are the next actions as of **2026-09-22**, and who owns each next action (not merely the listed task assignee if those differ)?"
+c1,Q12,"Several streams remain blocked while others are only reopened. As of **2026-09-22**, what work can still advance in parallel, what cannot progress until an external dependency moves, and what release-checklist work is gated on packaging and Windows signing?"
+c1,Q13,"A clinic batch includes a scanned invoice with no usable native text layer, so OCR runs. Mid-job an unhandled worker exception fires before any export is finalized. OCR confidence on the page being processed was 82%. As of the **2026-09-22** rule set, what must happen to outputs and temps, what crash report is written, how the 90% manual-review rule applies (or does not) to this abort, and which related audit/OCR implementation items are still unfinished?"
+c1,Q14,"As of the final project snapshot after **2026-09-22**, what hard calendar constraint, if any, now governs shipping v1.0.0 if Docker packaging and Windows signing stay red, and how, if at all, does that change the earlier security-gate hold?"
+c1,Q15,"For zero-trust node sync field sign-off as of the final project snapshot, is the earlier nominal-latency handshake pass enough? What high-latency field constraint, if any, now applies, and what timeout budget, if any, must planning assume?"
+c2,Q-01,Has the concurrent sum performance work in `opentelemetry-go` pull request `#7427` been released?
+c2,Q-02,What did the Go SIG decide to do with Nico’s large runtime-tracer / profiling public-API proposal?
+c2,Q-03,Has the histogram-reservoir optimization in `opentelemetry-go` pull request `#7443` been released?
+c2,Q-04,What is the status of the otelgin MultipartForm temporary-file cleanup work tracked by `opentelemetry-go-contrib` issue `#5946` and pull request `#6609`?
+c2,Q-05,"Is custom temporality-selector configuration supported in OpenTelemetry Go `v1.39.0`, and what related selector API did that release ship?"
+c2,Q-06,Has the SDK log `Record` mutation fix in `opentelemetry-go` pull request `#7403` been released?
+c2,Q-07,What did the Go SIG decide about the OTelConf RC support PR that was blocking the next release?
+c2,Q-08,What is the status of `opentelemetry-go-contrib` issue `#7254` (otelhttp error recording under the new semantic conventions)?
+c2,Q-09,Has the fixed-bucket histogram optimization in `opentelemetry-go` pull request `#7474` been released?
+c2,A-01,"Which MultipartForm cleanup approach is being pursued for otelgin (`#5946` / `#6609`), and what is its current implementation status?"
+c2,A-02,On what date will otelgrpc module stabilization be complete?
+c2,A-03,"Which release confirmed immutable releases working for Go and Go Contrib, and what is the current status of the broader work in `sig-security#164`?"
+c2,A-04,Was the Ecosystem Explorer implementation delivered after the community project proposal merged?
+c2,A-05,Why was `opentelemetry-go-contrib` pull request `#8014` (otelgin context save/restore) closed?
+c2,A-06,Did the OTelConf RC support PR that the SIG agreed to merge actually ship in a release?

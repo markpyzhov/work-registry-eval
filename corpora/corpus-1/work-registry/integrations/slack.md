@@ -1,0 +1,73 @@
+# Slack Integration
+
+This registry maps raw Slack thread exports to stable `SRC-*` IDs for the `med-synth` project.
+
+| Source ID | Path | Remote ID | Last Synced |
+|---|---|---|---|
+| SRC-SLACK-01 | test-data/med-synth/communication/sources/slack/2026-06-03-core-engine-pr.md | T1001-A | 2026-07-13 |
+| SRC-SLACK-02 | test-data/med-synth/communication/sources/slack/2026-06-06-regex-dependency.md | T1002-B | 2026-07-13 |
+| SRC-SLACK-03 | test-data/med-synth/communication/sources/slack/2026-06-14-api-endpoint.md | T1003-C | 2026-07-13 |
+| SRC-SLACK-04 | test-data/med-synth/communication/sources/slack/2026-06-20-config-format-debate.md | T1004-D | 2026-07-13 |
+| SRC-SLACK-05 | test-data/med-synth/communication/sources/slack/2026-06-23-offset-bug-debug.md | T1005-E | 2026-07-13 |
+| SRC-SLACK-06 | test-data/med-synth/communication/sources/slack/2026-06-25-docker-size.md | T1006-F | 2026-08-12 |
+| SRC-SLACK-07 | test-data/med-synth/communication/sources/slack/2026-06-26-blocked-on-upstream.md | T1007-G | 2026-09-10 |
+| SRC-SLACK-08 | test-data/med-synth/communication/sources/slack/2026-06-28-defer-auth.md | T1008-H | 2026-08-22 |
+| SRC-SLACK-09 | test-data/med-synth/communication/sources/slack/2026-07-10-security-patch.md | T1009-I | 2026-08-12 |
+| SRC-SLACK-10 | test-data/med-synth/communication/sources/slack/2026-07-11-cli-parity.md | T1010-J | 2026-08-12 |
+| SRC-SLACK-11 | test-data/med-synth/communication/sources/slack/2026-06-28-manual-review-threshold.md | T1011-K | 2026-09-23 |
+| SRC-SLACK-12 | test-data/med-synth/communication/sources/slack/2026-06-12-batch-failures.md | T1012-L | 2026-08-12 |
+| SRC-SLACK-13 | test-data/med-synth/communication/sources/slack/2026-07-09-config-parity-discovery.md | T1013-M | 2026-07-13 |
+| SRC-SLACK-14 | test-data/med-synth/communication/sources/slack/2026-08-02-local-runtime-static-link-study.md | T1015 | 2026-08-15 |
+| SRC-SLACK-15 | test-data/med-synth/communication/sources/slack/2026-08-04-local-runtime-static-compile.md | T1016 | 2026-08-15 |
+| SRC-SLACK-16 | test-data/med-synth/communication/sources/slack/2026-08-02-offline-auth-key-rotation.md | T1017 | 2026-08-15 |
+| SRC-SLACK-17 | test-data/med-synth/communication/sources/slack/2026-08-04-offline-auth-mock-block.md | T1018 | 2026-08-15 |
+| SRC-SLACK-18 | test-data/med-synth/communication/sources/slack/2026-08-03-hipaa-identifier-enumeration.md | T1019 | 2026-08-15 |
+| SRC-SLACK-19 | test-data/med-synth/communication/sources/slack/2026-08-05-hipaa-regex-dictionary.md | T1020 | 2026-08-15 |
+| SRC-SLACK-20 | test-data/med-synth/communication/sources/slack/2026-08-03-aes256-crypto-eval.md | T1021 | 2026-08-15 |
+| SRC-SLACK-21 | test-data/med-synth/communication/sources/slack/2026-08-05-aes256-pipeline.md | T1022 | 2026-08-15 |
+| SRC-SLACK-22 | test-data/med-synth/communication/sources/slack/2026-08-04-storage-quota-monitor.md | T1023 | 2026-08-15 |
+| SRC-SLACK-23 | test-data/med-synth/communication/sources/slack/2026-08-06-storage-quota-halt.md | T1024 | 2026-09-23 |
+| SRC-SLACK-24 | test-data/med-synth/communication/sources/slack/2026-08-04-redaction-preview-overlay.md | T1025 | 2026-08-15 |
+| SRC-SLACK-25 | test-data/med-synth/communication/sources/slack/2026-08-06-redaction-preview-highlighting.md | T1026 | 2026-08-15 |
+| SRC-SLACK-26 | test-data/med-synth/communication/sources/slack/2026-08-06-node-sync-handshake-prototype.md | T1027 | 2026-08-15 |
+| SRC-SLACK-27 | test-data/med-synth/communication/sources/slack/2026-08-08-node-sync-handshake-validation.md | T1028 | 2026-09-23 |
+| SRC-SLACK-28 | test-data/med-synth/communication/sources/slack/2026-08-07-ocr-temp-file-trace.md | T1029 | 2026-08-15 |
+| SRC-SLACK-29 | test-data/med-synth/communication/sources/slack/2026-08-09-ocr-temp-cleanup-hooks.md | T1030 | 2026-08-15 |
+| SRC-SLACK-30 | test-data/med-synth/communication/sources/slack/2026-08-03-batch-worker-pool-design.md | T1031 | 2026-08-15 |
+| SRC-SLACK-31 | test-data/med-synth/communication/sources/slack/2026-08-05-batch-worker-pool-integration.md | T1032 | 2026-08-15 |
+| SRC-SLACK-32 | test-data/med-synth/communication/sources/slack/2026-08-06-offline-harness.md | T1033 | 2026-08-15 |
+| SRC-SLACK-33 | test-data/med-synth/communication/sources/slack/2026-08-08-offline-batch-run.md | T1034 | 2026-08-15 |
+| SRC-SLACK-34 | test-data/med-synth/communication/sources/slack/2026-08-07-benchmark-scripts.md | T1035 | 2026-08-16 |
+| SRC-SLACK-35 | test-data/med-synth/communication/sources/slack/2026-08-11-benchmark-results.md | T1036 | 2026-08-19 |
+| SRC-SLACK-36 | test-data/med-synth/communication/sources/slack/2026-08-10-windows-path-handling.md | T1037 | 2026-08-18 |
+| SRC-SLACK-37 | test-data/med-synth/communication/sources/slack/2026-09-02-windows-signing-gap.md | T1038 | 2026-09-02 |
+| SRC-SLACK-38 | test-data/med-synth/communication/sources/slack/2026-08-12-windows-build-artifact.md | T1039 | 2026-08-21 |
+| SRC-SLACK-39 | test-data/med-synth/communication/sources/slack/2026-08-09-license-audit.md | T1040 | 2026-08-20 |
+| SRC-SLACK-40 | test-data/med-synth/communication/sources/slack/2026-08-12-license-agpl-reopen.md | T1041 | 2026-08-22 |
+| SRC-SLACK-41 | test-data/med-synth/communication/sources/slack/2026-08-11-license-parser-swap.md | T1042 | 2026-08-23 |
+| SRC-SLACK-42 | test-data/med-synth/communication/sources/slack/2026-08-14-large-file-chunking.md | T1043 | 2026-08-22 |
+| SRC-SLACK-43 | test-data/med-synth/communication/sources/slack/2026-08-18-large-file-chunking-reopen.md | T1044 | 2026-08-24 |
+| SRC-SLACK-44 | test-data/med-synth/communication/sources/slack/2026-08-16-large-file-chunking-merge.md | T1045 | 2026-08-25 |
+| SRC-SLACK-45 | test-data/med-synth/communication/sources/slack/2026-08-12-redaction-profile-schema.md | T1046 | 2026-08-24 |
+| SRC-SLACK-46 | test-data/med-synth/communication/sources/slack/2026-08-14-redaction-profile-export-api.md | T1047 | 2026-08-26 |
+| SRC-SLACK-47 | test-data/med-synth/communication/sources/slack/2026-08-16-redaction-profile-verify.md | T1048 | 2026-08-27 |
+| SRC-SLACK-48 | test-data/med-synth/communication/sources/slack/2026-08-17-memory-leak-hotspots.md | T1049 | 2026-08-26 |
+| SRC-SLACK-49 | test-data/med-synth/communication/sources/slack/2026-08-21-memory-leak-tracemalloc.md | T1050 | 2026-08-29 |
+| SRC-SLACK-50 | test-data/med-synth/communication/sources/slack/2026-08-12-csv-dictionary-loader.md | T1051 | 2026-08-28 |
+| SRC-SLACK-51 | test-data/med-synth/communication/sources/slack/2026-08-16-csv-dictionary-notes.md | T1052 | 2026-08-30 |
+| SRC-SLACK-52 | test-data/med-synth/communication/sources/slack/2026-08-14-csv-dictionary-matcher.md | T1053 | 2026-08-31 |
+| SRC-SLACK-53 | test-data/med-synth/communication/sources/slack/2026-08-14-electron-shell.md | T1054 | 2026-08-30 |
+| SRC-SLACK-54 | test-data/med-synth/communication/sources/slack/2026-08-16-electron-ipc-bridge.md | T1055 | 2026-09-01 |
+| SRC-SLACK-55 | test-data/med-synth/communication/sources/slack/2026-08-18-electron-package-test.md | T1056 | 2026-09-02 |
+| SRC-SLACK-56 | test-data/med-synth/communication/sources/slack/2026-08-17-high-dpi-repro.md | T1057 | 2026-09-01 |
+| SRC-SLACK-57 | test-data/med-synth/communication/sources/slack/2026-08-19-high-dpi-scaling-math.md | T1058 | 2026-09-03 |
+| SRC-SLACK-58 | test-data/med-synth/communication/sources/slack/2026-09-10-high-dpi-upstream-block.md | T1059 | 2026-09-10 |
+| SRC-SLACK-59 | test-data/med-synth/communication/sources/slack/2026-08-20-async-batch-scheduler.md | T1060 | 2026-09-03 |
+| SRC-SLACK-60 | test-data/med-synth/communication/sources/slack/2026-08-22-async-batch-workers.md | T1061 | 2026-09-05 |
+| SRC-SLACK-61 | test-data/med-synth/communication/sources/slack/2026-08-25-async-batch-io-race.md | T1062 | 2026-09-06 |
+| SRC-SLACK-62 | test-data/med-synth/communication/sources/slack/2026-08-20-telemetry-opt-out-design.md | T1063 | 2026-09-05 |
+| SRC-SLACK-63 | test-data/med-synth/communication/sources/slack/2026-08-22-telemetry-opt-out-flag.md | T1064 | 2026-09-07 |
+| SRC-SLACK-64 | test-data/med-synth/communication/sources/slack/2026-08-24-telemetry-opt-out-verify.md | T1065 | 2026-09-08 |
+| SRC-SLACK-65 | test-data/med-synth/communication/sources/slack/2026-08-21-a11y-keyboard.md | T1066 | 2026-09-07 |
+| SRC-SLACK-66 | test-data/med-synth/communication/sources/slack/2026-08-22-a11y-screen-reader.md | T1067 | 2026-09-09 |
+| SRC-SLACK-67 | test-data/med-synth/communication/sources/slack/2026-08-24-a11y-superseded.md | T1068 | 2026-09-10 |

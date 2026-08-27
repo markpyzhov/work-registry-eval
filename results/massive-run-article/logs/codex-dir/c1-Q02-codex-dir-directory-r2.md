@@ -1,0 +1,9 @@
+# Docker packaging was once treated as finished. As of **2026-09-22**, what is the authoritative status of that work, what earlier completion claim does it supersede, and what concrete size and CVE outcomes still prevent calling the image release-ready?
+
+<!-- RESPONSE_START -->
+
+As of **2026-09-22**, authoritative WS-03 status is **T005/CIPH-15 Active (Reopened)**—not release-ready. The earlier completion claim is superseded: the initial Dockerfile milestone (2026-06-16) explicitly still required size/CVE review; WS-03 records an initial ~800MB completion later reopened on 2026-06-25 after OCR bundling produced a **2.1GB** image. [WS-03 ops](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/work-states/WS-03-ops.md:38) [Initial release notes](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/documentation/sources/2026-06-16-Docker-Release-Notes.md:15)
+
+Concrete unresolved outcomes: despite multi-stage packaging, Alpine, and removal of unused OCR/runtime packages, the August 12 verification found the image still **over the ~450MB GA target** and the **CVE verification failing**; no later measured size or clean scan result is evidenced. [Docker optimization thread](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/communication/sources/slack/2026-06-25-docker-size.md:22) [CIPH-15](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/tasks/CIPH-15-Docker-Packaging.md:15)
+
+The gates differ: an interim RC may ship at **800MB only once CVE-clean**, while GA remains ~450MB—neither is demonstrated. This keeps T011 under security hold; release becomes no-ship after **2026-10-15** if T005 and Windows signing T029 are not green. [June comment](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/work-states/comments/2026-06.md:16) [WS-03 ops](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/work-states/WS-03-ops.md:34)

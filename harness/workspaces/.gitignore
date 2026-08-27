@@ -1,0 +1,9 @@
+c1-questions.md
+c2-questions.md
+/c1/*
+!/c1/AGENTS.md
+!/c1/CLAUDE.md
+/c2/*
+!/c2/AGENTS.md
+!/c2/CLAUDE.md
+/baseline/

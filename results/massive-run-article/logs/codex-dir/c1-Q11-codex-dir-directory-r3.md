@@ -1,0 +1,11 @@
+# On the critical path to clearing the security-gate hold, what are the next actions as of **2026-09-22**, and who owns each next action (not merely the listed task assignee if those differ)?
+
+<!-- RESPONSE_START -->
+
+As of **2026-09-22**, the security-gate hold clears only when **T005 and T029 are green**; otherwise no-ship applies after **2026-10-15**. [WS-03](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/work-states/WS-03-ops.md:31) [CMT-2026-09-002](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/work-states/comments/2026-09.md:13)
+
+- **T005—make the Docker gate pass:** **Evan** must remove remaining Python `site-packages` bloat and determine/remediate the CVE-scan failure. **Diana** then owns the gate verification/tracking: recheck image size and CVEs, keeping it open until both are clean. The formal GA target is about **450 MB** and the CVE check must pass. [Docker Slack thread](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/communication/sources/slack/2026-06-25-docker-size.md:22) [CIPH-15](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/tasks/CIPH-15-Docker-Packaging.md:14)
+
+- **T029—remove the Windows signing dependency:** **Alice** owns the immediate next action: chase/procure the missing Authenticode code-signing certificate (despite Evan being the ClickUp assignee). Once available, the required remaining work is to wire signing into the release build and demonstrate that the signed binary no longer raises Defender/SmartScreen warnings; the sources do **not** explicitly assign those post-procurement steps to a named individual. [Windows signing gap](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/communication/sources/slack/2026-09-02-windows-signing-gap.md:19) [Windows compatibility audit](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/documentation/sources/2026-09-02-Windows-Compatibility-Audit-Report.md:16) [CIPH-39](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/tasks/CIPH-39-Windows-Compatibility.md:14)
+
+Evan’s CIPH-21 assignment is gate tracking, not evidence that he owns certificate procurement. [CIPH-21](/Users/markpyzhov/VSCodeProjects/corpuses-arms/c1/med-synth/tasks/CIPH-21-Release-v1-Gates.md:4)

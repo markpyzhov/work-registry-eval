@@ -1,0 +1,23 @@
+# Licensing
+
+This repository contains material under more than one license.
+
+## Code
+
+Unless a file states otherwise, the source code and software-specific documentation
+under `harness/` are licensed under the MIT License. See `LICENSE-CODE`.
+
+## Original research materials
+
+To the extent that Mark Pyzhov holds the applicable copyright and similar rights,
+original research materials and documentation created for this repository are licensed
+under the Creative Commons Attribution 4.0 International License (CC BY 4.0). See
+`LICENSE-DATA`.
+
+This grant applies only to rights held by Mark Pyzhov. It does not relicense third-party
+material, including public GitHub records, content authored by GitHub users, upstream
+project material, or outputs from third-party AI services. Where a file combines
+original and third-party material, the licenses above apply only to the original
+contributions covered by those licenses.
+
+See `THIRD_PARTY_NOTICES.md` for provenance and exclusions.

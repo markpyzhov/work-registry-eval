@@ -1,0 +1,57 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3390010099",
+    "artifact_type": "meeting-note",
+    "author": "pellared",
+    "created_at": "2025-10-10T13:10:44Z",
+    "updated_at": "2025-10-10T14:04:27Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3390010099",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3390010099",
+    "issue_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/6648",
+    "id": 3390010099,
+    "node_id": "IC_kwDOCya1Uc7KD3Lz",
+    "user": {
+      "login": "pellared",
+      "id": 5067549,
+      "node_id": "MDQ6VXNlcjUwNjc1NDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5067549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pellared",
+      "html_url": "https://github.com/pellared",
+      "followers_url": "https://api.github.com/users/pellared/followers",
+      "following_url": "https://api.github.com/users/pellared/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pellared/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pellared/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pellared/subscriptions",
+      "organizations_url": "https://api.github.com/users/pellared/orgs",
+      "repos_url": "https://api.github.com/users/pellared/repos",
+      "events_url": "https://api.github.com/users/pellared/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pellared/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2025-10-10T13:10:44Z",
+    "updated_at": "2025-10-10T14:04:27Z",
+    "body": "**Date:** 2025-10-09\n\n**Attendees:**\n- Tyler Yahn\n- David Ashpole\n- Bryan Boreham\n\n## Agenda Items\n\n### 1. Milestone Progress Review\n\n**Current milestone status:**\n- 17 items still open in the milestone\n- Most PRs are in review phase or awaiting final approvals\n\n**Key items discussed:**\n\n#### Expose temporality selector functions\n- **Status:** Under discussion, may not be accepted in current form\n- **Discussion:** Tyler and David discussed whether to expose temporality selector parsing functions for configuration\n- **Decision:** Not recommended for inclusion in SDK. Users should use full OpenTelemetry configuration file format instead of custom configuration snippets\n- **Rationale:** Want to standardize on OTel configuration format rather than supporting fragmented approaches\n- **Action:** Tyler to respond with feedback about standardization preference\n\n#### Prometheus Exporter Migration\n- **Status:** Implementation complete, needs deprecation decision\n- **Discussion:** Need to decide on deprecating existing configuration options\n- **Decision:** Tyler supports deprecation before marking as stable\n- **Next steps:** Handle in next milestone\n\n#### Error Handling for Prometheus\n- **Status:** PR ready for review, waiting for conversation resolution\n- **Action:** David to review and potentially merge\n\n#### High mutex contention in metric sums\n- **Status:** Resolved via PR #7427\n- **Action:** Close issue\n\n### 2. Optimization Work Discussion\n\n**David's current work:**\n- Implementing lockless exponential histogram\n- Fun and challenging optimization project\n- Building on previous optimization PRs\n\n**PR Reviews needed:**\n- **PR #7474:** Exemplar reservoir optimization (approved by Tyler, needs second approval)\n- **PR #7443:** Histogram optimization (needs review, has race condition issue identified)\n\n**Technical discussion on PR #7443:**\n- Tyler identified potential race condition in min/max tracking with `isSet` flag\n- Issue: Separate atomic operations for value and `isSet` flag can lead to inconsistent state\n- Potential solutions discussed:\n  - Use atomic pointer with combined value+set state\n  - David had tried this approach before but found it slower\n  - Need to investigate performance implications of different approaches\n\n### 3. Contrib Repository Items\n\n**Error recording for spans with semantic conventions:**\n- Discussion about when to record error.type attribute vs exception events\n- Related to Tyler's work on error type functions\n- Not blocking for current milestone but worth investigating\n\n### 4. Action Items\n\n- **Tyler:** \n  - Respond to issue with standardization feedback\n  - Review and provide feedback on PR #7443 race condition\n  - Continue work on error type handling improvements\n\n- **David:**\n  - Fix race condition in PR #7443 extrema implementation\n  - Review Prometheus error handling PR\n  - Continue work on lockless exponential histogram\n\n- **Bryan:**\n  - Review PR #7474 (exemplar reservoir optimization)\n  - Review PR #7443 (histogram optimization)\n\n### 5. Upcoming Events\n\n- KubeCon in ~3 weeks (November 8-9 for Maintainer Summit)",
+    "author_association": "MEMBER",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3390010099/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+}

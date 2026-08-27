@@ -1,0 +1,13 @@
+session_id,correctness,missing_facts,citations_total,citations_valid
+c1-Q14-claude-directory-r1,1,0,11,11
+c1-Q14-claude-directory-r2,1,0,14,14
+c1-Q14-claude-directory-r3,1,0,11,11
+c1-Q14-claude-workrag-r1,1,0,9,9
+c1-Q14-claude-workrag-r2,1,0,10,10
+c1-Q14-claude-workrag-r3,1,0,9,9
+c1-Q14-codex-dir-directory-r1,1,0,2,2
+c1-Q14-codex-dir-directory-r2,1,0,2,2
+c1-Q14-codex-dir-directory-r3,1,0,4,4
+c1-Q14-codex-rag-workrag-r1,1,0,2,2
+c1-Q14-codex-rag-workrag-r2,1,0,2,2
+c1-Q14-codex-rag-workrag-r3,1,0,4,4

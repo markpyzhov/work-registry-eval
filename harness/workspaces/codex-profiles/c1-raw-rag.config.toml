@@ -1,0 +1,31 @@
+model = "gpt-5.6-terra"
+model_reasoning_effort = "high"
+
+default_permissions = "rag-locked"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+
+tools.web_search = false
+tools.view_image = false
+features.shell_tool = false
+
+auto_review.policy = """
+Approve ragflow_retrieval only when:
+- dataset_ids is exactly ["REPLACE_C1_SOURCES_DATASET_ID"]
+Reject every other call.
+"""
+
+[permissions.rag-locked.filesystem]
+":root" = "deny"
+":minimal" = "read"
+"REPLACE_REPO_ROOT/harness/workspaces/raw-rag/AGENTS.md" = "read"
+
+[permissions.rag-locked.network]
+enabled = false
+
+[mcp_servers.tl-v1]
+url = "http://127.0.0.1:9382/mcp"
+enabled = true
+required = true
+enabled_tools = ["ragflow_retrieval"]
+default_tools_approval_mode = "prompt"

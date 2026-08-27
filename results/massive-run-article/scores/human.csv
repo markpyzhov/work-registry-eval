@@ -1,0 +1,76 @@
+session_id,correctness,description
+c1-Q02-codex-rag-sources-r1,1,Dates were not required by the question
+c1-Q02-codex-rag-sources-r2,1,Dates were not required by the question
+c1-Q02-codex-rag-sources-r3,1,Dates were not required by the question
+c1-Q04-codex-dir-directory-r1,1,Dates were not required by the question
+c1-Q04-codex-rag-sources-r2,1,Dates were not required by the question
+c1-Q04-codex-rag-sources-r3,1,Dates were not required by the question
+c1-Q05-codex-dir-directory-r1,1,"Question asks criteria, not people"
+c1-Q05-codex-dir-directory-r2,1,Paraphrase
+c1-Q05-codex-dir-directory-r3,1,"Question asks criteria, not people"
+c1-Q05-codex-rag-workrag-r3,1,"Question asks criteria, not people"
+c1-Q06-claude-directory-r1,1,Proved in table and paraphrased
+c1-Q07-codex-dir-directory-r3,0.5,Label says pure external where truth is mixed
+c1-Q08-claude-directory-r2,1,Just paraphrased
+c1-Q08-claude-directory-r3,1,Just paraphrased
+c1-Q08-claude-workrag-r1,1,Just paraphrased
+c1-Q09-claude-directory-r1,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-claude-sources-r1,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-claude-sources-r2,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-claude-sources-r3,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-claude-workrag-r1,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-dir-directory-r1,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-dir-directory-r2,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-dir-directory-r3,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-rag-sources-r1,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-rag-sources-r2,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-rag-sources-r3,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-rag-workrag-r1,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-rag-workrag-r2,1,T010 not asked; extra incomplete items not penalizable
+c1-Q09-codex-rag-workrag-r3,1,T010 not asked; extra incomplete items not penalizable
+c1-Q10-claude-sources-r1,1,At least two completed milestones achieved
+c1-Q10-claude-sources-r3,1,At least two completed milestones achieved
+c1-Q10-claude-workrag-r2,1,At least two completed milestones achieved
+c1-Q10-claude-workrag-r3,1,At least two completed milestones achieved
+c1-Q10-codex-dir-directory-r1,1,At least two completed milestones achieved
+c1-Q11-codex-rag-sources-r3,0.5,Reached the material but wrong in prose
+c1-Q12-codex-rag-workrag-r3,0.5,Missed real key (T019)
+c1-Q14-claude-directory-r1,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-claude-directory-r2,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-claude-directory-r3,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-claude-workrag-r1,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-claude-workrag-r2,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-claude-workrag-r3,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-codex-dir-directory-r1,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-codex-dir-directory-r2,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-codex-dir-directory-r3,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-codex-rag-workrag-r1,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-codex-rag-workrag-r2,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q14-codex-rag-workrag-r3,1,Just paraphrased; key word 'replaces' is the defect
+c1-Q15-claude-sources-r1,1,Just paraphrased
+c1-Q15-claude-sources-r2,1,Just paraphrased
+c1-Q15-claude-sources-r3,1,Just paraphrased
+c1-Q15-codex-rag-sources-r1,1,Just paraphrased
+c1-Q15-codex-rag-sources-r2,1,Just paraphrased
+c1-Q15-codex-rag-sources-r3,1,Just paraphrased
+c2-A06-claude-baseline-r1,1,Correctly stated shipment not established
+c2-A06-codex-baseline-baseline-r1,0.5,"Never stated shipped, but guessed the fact"
+c2-Q01-codex-baseline-baseline-r1,0,Invented version
+c2-Q01-codex-rag-workrag-r2,1,Notes-name-PR not asked by the question
+c2-Q03-claude-sources-r1,0,Key requires stating 'not released'
+c2-Q03-claude-sources-r2,0,Key requires stating 'not released'
+c2-Q03-claude-sources-r3,0,Key requires stating 'not released'
+c2-Q06-codex-dir-directory-r1,1,Just paraphrased
+c2-Q06-codex-dir-directory-r2,1,Just paraphrased
+c2-Q06-codex-dir-directory-r3,1,Just paraphrased
+c2-Q06-codex-rag-sources-r1,1,Just paraphrased
+c2-Q06-codex-rag-sources-r2,1,Just paraphrased
+c2-Q06-codex-rag-sources-r3,1,Just paraphrased
+c2-Q06-codex-rag-workrag-r1,1,Just paraphrased
+c2-Q06-codex-rag-workrag-r2,1,Just paraphrased
+c2-Q06-codex-rag-workrag-r3,1,Just paraphrased
+c2-Q07-codex-baseline-baseline-r1,0.5,"Conclusion correct, facts missed"
+c2-Q08-claude-sources-r1,0.5,'Shipped' between prohibited 'Released' and evidenced 'Closed'
+c2-Q08-claude-sources-r2,0.5,'Shipped' between prohibited 'Released' and evidenced 'Closed'
+c2-Q09-claude-baseline-r1,0,No answer provided
+c2-Q09-codex-baseline-baseline-r1,0.5,Answer provided but no facts

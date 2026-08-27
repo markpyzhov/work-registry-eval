@@ -1,0 +1,57 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3479626706",
+    "artifact_type": "meeting-note",
+    "author": "pellared",
+    "created_at": "2025-11-03T09:30:26Z",
+    "updated_at": "2025-11-03T09:30:26Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3479626706",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3479626706",
+    "issue_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/6648",
+    "id": 3479626706,
+    "node_id": "IC_kwDOCya1Uc7PZuPS",
+    "user": {
+      "login": "pellared",
+      "id": 5067549,
+      "node_id": "MDQ6VXNlcjUwNjc1NDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5067549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pellared",
+      "html_url": "https://github.com/pellared",
+      "followers_url": "https://api.github.com/users/pellared/followers",
+      "following_url": "https://api.github.com/users/pellared/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pellared/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pellared/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pellared/subscriptions",
+      "organizations_url": "https://api.github.com/users/pellared/orgs",
+      "repos_url": "https://api.github.com/users/pellared/repos",
+      "events_url": "https://api.github.com/users/pellared/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pellared/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2025-11-03T09:30:26Z",
+    "updated_at": "2025-11-03T09:30:26Z",
+    "body": "**Date:** 2025-10-23\n\n**Attendees:**\n- Tyler Yahn\n- Alex Boten\n- David Ashpole (dashpole)\n\n## Transcript\n\n### PR status: JSON/YAML unmarshalling\n- A small change (error tag) was suggested and applied.\n- Build is running; plan is to merge once green.\n\n### Adding env var support for OTEL_EXPERIMENTAL_CONFIG_FILE\n\nReference: Adding env var support for OTEL_EXPERIMENTAL_CONFIG_FILE: https://github.com/open-telemetry/opentelemetry-go-contrib/issues/8059\n\n- Goal:\n  - If the env var is present, load the indicated config file and configure the SDK automatically, minimizing user code.\n- Current ecosystem notes:\n  - PHP reports support; other languages vary (JS likely working on it; C++ explicitly not supporting).\n  - Go users are accustomed to programmatic setup; unclear if SDK-level support is necessary.\n- Go implementation options discussed:\n  - SDK experimental feature-flag approach:\n    - Use internal “x”/experimental packages to expose a feature gate for the env var.\n    - Check the env var during SDK setup (e.g., TracerProvider construction), and if enabled, configure from the file.\n    - Complications:\n      - Potential import cycles (e.g., if otelconf needs sdk and vice versa).\n      - Decision required on how to handle passed options vs. config file (ignore vs. merge).\n      - Requires similar work across trace, metrics, and logs modules.\n  - Contrib-first approach (preferred short term):\n    - Implement in opentelemetry-go-contrib/otelconf:\n      - Provide an explicit function to load from OTEL_EXPERIMENTAL_CONFIG_FILE and construct/return SDK providers.\n      - Optionally offer an init-based side effect that sets the global provider if the env var is set (not ideal, but acceptable during experimental phase to collect feedback).\n    - Advantages:\n      - Avoids SDK import cycles and keeps experimental behavior isolated.\n      - Lets users opt in; easier to iterate and gather feedback before considering SDK-level integration.\n- Global vs. explicit provider setup:\n  - The otel global package has its own subtleties; supporting both code paths may be necessary.\n  - Global setup increases risk of cycles/complexity; explicit function in contrib is cleaner initially.\n- Tentative direction:\n  - Do not add SDK-level support in the short term.\n  - Prototype in contrib (otelconf); gather user feedback.\n  - Revisit SDK inclusion later if demand and design stabilize.\n\n### Auto-instrumentation considerations\n- Go auto-instrumentation would likely benefit from config-file-driven setup, but it can build on the contrib implementation once it exists.\n\n### SDK experimental features README gap\n- There is an “observability” feature in an internal X package that is not documented in the README; should be updated.\n\n### Metrics pipeline and exponential histogram status\n- David:\n  - Working on exponential histogram; close to resolving one remaining issue (race condition).\n  - Performance is faster but currently ~150 ns vs. a ~120 ns goal; investigating sources of overhead (likely computation).\n- Tyler:\n  - Still owes reviews on metrics pipeline optimization PRs.\n  - Discussed exemplar/histogram locking changes; some PRs shift lock scope; others use a hot/cold structure.\n\n## Action Items\n- Alex: Draft a proposal/PR in opentelemetry-go-contrib/otelconf to:\n  - Load and apply OTEL_EXPERIMENTAL_CONFIG_FILE via an explicit function that returns configured SDK providers.\n  - Optionally provide an init-based variant guarded by the env var for experimentation (clearly documented).\n  - Post the approach in issue #8059 to gather feedback.\n- Tyler: Merge the JSON/YAML unmarshalling PR after CI passes.\n- Tyler: Review existing metrics pipeline optimization PRs.\n- Tyler: Update the README to document the existing “observability” experimental feature in the X package.\n- David: Resolve the exponential histogram race condition and continue investigating the ~30 ns performance gap.\n- All: Decide (and document) the policy for handling user-provided options when the env var is set (ignore vs. merge) as part of the contrib PR discussion.",
+    "author_association": "MEMBER",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3479626706/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3389930076",
+    "artifact_type": "meeting-note",
+    "author": "pellared",
+    "created_at": "2025-10-10T12:53:12Z",
+    "updated_at": "2025-10-10T12:54:14Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3389930076",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3389930076",
+    "issue_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/6648",
+    "id": 3389930076,
+    "node_id": "IC_kwDOCya1Uc7KDjpc",
+    "user": {
+      "login": "pellared",
+      "id": 5067549,
+      "node_id": "MDQ6VXNlcjUwNjc1NDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5067549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pellared",
+      "html_url": "https://github.com/pellared",
+      "followers_url": "https://api.github.com/users/pellared/followers",
+      "following_url": "https://api.github.com/users/pellared/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pellared/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pellared/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pellared/subscriptions",
+      "organizations_url": "https://api.github.com/users/pellared/orgs",
+      "repos_url": "https://api.github.com/users/pellared/repos",
+      "events_url": "https://api.github.com/users/pellared/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pellared/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2025-10-10T12:53:12Z",
+    "updated_at": "2025-10-10T12:54:14Z",
+    "body": "**Date:** 2025-09-25\n\n**Attendees:**\n- Tyler Yahn.\n- Bryan Boreham.\n- David Ashpole (dashpole).\n- Owen Williams.\n- Robert Pająk.\n\n## Announcements\n- go.opentelemetry.io certificate incident:\n  - Website experienced downtime due to a certificate issuance problem.\n  - Issue has been remediated; if problems persist, open an issue or ask in Slack.\n  - A post-mortem will be published to cover root cause and the broader incident.\n  - Apologies for the disruption; steps will be taken to prevent recurrence.\n- Events:\n  - KubeCon EU likely in Amsterdam next year; some attendees considering talks.\n  - Talk idea noted: “Parsing Protobuf at gigabytes per second — and other fantasies.”\n\n## Milestone Check-in\n- Why does cardinality limit add performance overhead to metric measurements?\n  - Status: Needs benchmarking to assess/confirm.\n  - Assignee: David Ashpole volunteered.\n  - Note: If it takes longer than expected, may unassign and remove from milestone.\n- Expose temporality selector functions:\n  - Status: PR exists; default temporality aggregation functions were not exposed; proposal includes a string-based “temporality select.”\n  - Concern: Replacing functions via string selector raised concerns.\n  - Next: No recent activity; likely to wait and potentially move out of the milestone.\n- Optimized locking for metric aggregation:\n  - Status: Work in progress by David; awaiting one more testing PR before starting locking improvements.\n  - Context: Approach reviewed informally with Josh McDonald; thought reasonably good.\n  - Testing PR: “Add concurrent-safe tests for metric aggregation” needs more reviews.\n  - Notes: A test-run issue caused confusion around time ordering; not a fundamental `time.Now` issue. Go 1.25 testing time manipulation may help if needed.\n- Exporter: Prometheus migrate to new configuration options:\n  - Status: On David’s list.\n  - Scope: Expected to be a one-line default change; no “Help Wanted” needed.\n- Improved error handling:\n  - Status: PR was in draft and author became inactive.\n  - Decision: Remove from milestone; consider pinging the author. Should not block release.\n- High mutex contention in metric sums:\n  - Status: Assigned to David; actively being fixed.\n- Observability packages:\n  - Status: Multiple PRs open and being reworked.\n  - Release impact: Not critical for upcoming release; if they block, move them out.\n  - Activity: Some PRs show movement; Tyler is actively working on one; others have limited updates.\n- Prometheus exporter: Optimize return times:\n  - Status: Worth review for those working on observability metrics.\n  - Context: Already merged for the standard trace exporter.\n  - Note: Awaiting minimum time requirement (~23 minutes) before completion.\n\n## Contrib Milestone\n- Remove deprecated `inject` and `extract`:\n  - Status: Needs to get done; received a thumbs up.\n  - Next: May need reassignment.\n- Cannot record error for spans when producing semantic conventions:\n  - Status: Opened by Sam; added to milestone but currently unassigned.\n  - Context: Clarification needed around semantic conventions/interpretation; might require additional work. Not stable instrumentation.\n  - Next: Needs a contributor to pick it up.\n\n\n## Action Items\n- David Ashpole:\n  - Benchmark “cardinality limit adds performance overhead to metric measurements.”\n  - Finalize testing PR and proceed with optimized locking for metric aggregation.\n  - Apply Prometheus exporter config migration (one-line default change).\n  - Continue fixing high mutex contention in metric sums.\n- Reviewers:\n  - Provide additional reviews on “Add concurrent-safe tests for metric aggregation.”\n- Tyler Yahn:\n  - Continue work on observability package PR(s); monitor progress across related PRs.\n- Maintainers/Contributors:\n  - Review Prometheus exporter “optimize return times” PR.\n  - Volunteer for “cannot record error for spans when producing semantic conventions.”\n  - Reassign “remove deprecated inject/extract” if the current assignee is unavailable.\n- Website/Infra:\n  - Publish and circulate the post-mortem for the go.opentelemetry.io certificate incident.",
+    "author_association": "MEMBER",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3389930076/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "source": {
+    "canonical_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3389972183",
+    "artifact_type": "meeting-note",
+    "author": "pellared",
+    "created_at": "2025-10-10T13:03:41Z",
+    "updated_at": "2025-10-10T13:04:17Z",
+    "collected_at": "2026-07-14T14:35:41Z"
+  },
+  "document": {
+    "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3389972183",
+    "html_url": "https://github.com/open-telemetry/opentelemetry-go/issues/6648#issuecomment-3389972183",
+    "issue_url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/6648",
+    "id": 3389972183,
+    "node_id": "IC_kwDOCya1Uc7KDt7X",
+    "user": {
+      "login": "pellared",
+      "id": 5067549,
+      "node_id": "MDQ6VXNlcjUwNjc1NDk=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5067549?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pellared",
+      "html_url": "https://github.com/pellared",
+      "followers_url": "https://api.github.com/users/pellared/followers",
+      "following_url": "https://api.github.com/users/pellared/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pellared/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pellared/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pellared/subscriptions",
+      "organizations_url": "https://api.github.com/users/pellared/orgs",
+      "repos_url": "https://api.github.com/users/pellared/repos",
+      "events_url": "https://api.github.com/users/pellared/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pellared/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2025-10-10T13:03:41Z",
+    "updated_at": "2025-10-10T13:04:17Z",
+    "body": "**Date:** 2025-10-02  \n\n**Attendees:**\n- Bryan Boreham\n- Damien Mathieu\n- Tyler Yahn\n- David Ashpole (dashpole)\n- Robert Pająk\n\n### 1) Incident review: go.opentelemetry.io outage, ownership, and platform\n\n- Summary:\n  - Recent outage on go.opentelemetry.io due to a CAA DNS entry change that blocked certificate issuance for Google-managed certs.\n  - Current hosting runs a Go app on Google App Engine with Google-managed certificates; proposal to migrate the Go Vanity URLs to a static Hugo site on Netlify (aligning with how opentelemetry.io is operated).\n  - Core concern raised: the outage root cause was lack of clear ownership, permissions, and change notification, not the hosting platform itself. Moving platforms without fixing ownership/ops may reduce control further.\n\n- Discussion highlights:\n  - Platform standardization (Hugo/Netlify) could reduce “snowflake” risk, but does not resolve core issues of:\n    - Clear ownership and responsibilities\n    - Access/permissions for maintainers (DNS, hosting, rollout)\n    - Notifications and checks for changes impacting serving (e.g., DNS/CAA updates)\n    - Incident playbooks and operational processes\n  - Agreement that the SIG needs either definitive ownership and access or a well-defined delegation with checks-and-balances to whoever operates the domain and hosting.\n  - Multiple projects rely on go.opentelemetry.io vanity URLs (Go SDK, Collector, build tools, Go instrumentation, eBPF instrumentation, proto, etc.), so any changes require broad communication.\n\n- Decisions:\n  - Proceed to define and confirm ownership, access, and operational processes first; explore migration in parallel only with the current or future owners’ buy-in.\n  - Ensure maintainers responsible for packages served under go.opentelemetry.io have appropriate access or guaranteed oversight channels.\n\n- Action items:\n  - Damien: Create a community issue to drive a cross-team ownership and operations proposal; invite GC (Governing Committee), comms/docs team, Collector maintainers, Go instrumentation, eBPF instrumentation, eBPF profiler, and this SIG.\n  - Damien: Propose strawman ownership models (Go SIG owning vs. comms/docs owning), required access (“keys”), and operational processes (DNS change notifications, rollout, playbooks).\n  - Tyler: Outline notification/subscription approach for DNS/CAA changes affecting serving; suggest checks-and-balances process.\n  - Group: Align on clear owner, permissions, and ops plan before any platform migration decision.\n\n### 2) PR: Add internal observability to OTLP Trace gRPC package; instrumentation scope naming\n\n- Summary:\n  - PR introduces internal observability instrumentation to the OTLP Trace gRPC package.\n  - Debate on scope name: use the instrumentation library/package path (current proposal) vs. the instrumented package/component name.\n\n- Discussion highlights:\n  - Specification guidance: instrumentation scope name should reflect the instrumentation library (not the instrumented target). Current proposal aligns with spec.\n  - Concern about stability: using internal package paths can constrain future internal code reorganization if dashboards/processors depend on the scope name.\n  - Proposal to add an attribute indicating the “instrumented component/package” to aid filtering/search, while keeping the scope name aligned with spec.\n\n- Decisions:\n  - Proceed with scope name per spec (instrumentation library).\n  - Consider adding an attribute to identify the instrumented component in a follow-up, potentially informed by spec work.\n\n- Action items:\n  - Tyler: Resolve the review thread referencing spec guidance; request/collect approvals.\n  - Robert: Open/track a semantic conventions issue to define an attribute for “instrumented component” across instrumentation.\n  - Group: Review PR; provide approvals.\n\n### 3) PR: Error type improvements (semantic conventions alignment)\n\n- Summary:\n  - Improve error typing so the error.type attribute reflects domain-specific values (e.g., gRPC status, partial error details) rather than generic “error string.”\n\n- Discussion highlights:\n  - Parser update allows passing errors that return a domain-relevant “type” string for telemetry.\n  - Fallback remains to package/type name if no domain-specific type is available.\n\n- Decisions:\n  - General agreement on direction; proceed after minor doc checks.\n\n- Action items:\n  - Robert: Verify GoDoc/rendering for the error type interface/docs (e.g., lines noted in error_type.go); approve once confirmed.\n  - Group: Review and approve the PR.\n\n### 4) PR: Counter performance improvements; benchmarks and exemplar behavior\n\n- Summary:\n  - Significant optimization work on synchronous metric paths:\n    - Use sync.Map for attribute-set storage to improve read-heavy performance.\n    - Atomic sum values; “hot-cold” waitgroup technique to make measurements lockless and enable safe resets for delta aggregations (inspired by Prometheus histogram patterns).\n  - Known implications:\n    - Attribute-set limit becomes a soft limit due to race in attribute-set creation (map size tracking vs. map updates).\n    - For cumulative aggregations, enforcing attribute limits deterministically is harder since state persists; care needed to avoid inconsistent drops.\n    - Exemplar behavior: an Add may be included in the metric points but its exemplar may not be recorded in the same batch, which is acceptable and consistent with Prometheus and exemplar sampling design.\n\n- Discussion highlights:\n  - Potential follow-up: for exemplar reservoirs, a “merge” API could enable hot-cold reservoir consolidation for stricter atomicity at a higher level.\n  - Future performance work: histogram improvements and sharding (e.g., per-CPU) to reduce contention further.\n  - Benchmarks indicate substantial gains: ~10x for histograms with no contention; ~3x for fixed-size with shared contention.\n\n- Decisions:\n  - Accept current approach; exemplar variability is acceptable under spec/practice.\n  - Prioritize reviews for the benchmark PR and counter performance PR; histograms/fixed-size follow after.\n\n- Action items:\n  - David:\n    - Finalize and sequence PRs: benchmark fix (includes bug fix), counter performance improvements, then histogram/fixed-size improvements.\n    - Document soft-limit behavior and any mitigation for cumulative aggregations.\n  - Tyler/Group: Review benchmark PR and counter performance PR first; provide feedback and approvals.\n  - Tyler: Consider options to tie map-size accounting to updates more atomically; follow up with comments/ideas.\n\n## Decisions (summary)\n- Ownership and ops first: Establish clear owner, access, notifications, and playbooks for go.opentelemetry.io; explore migration to Netlify/Hugo only with owners’ approval.\n- Scope naming: Use instrumentation library name per spec; later add an attribute for the instrumented component/package (track via semantic conventions).\n- Error types: Adopt domain-specific error.type where available; proceed after GoDoc verification.\n- Performance work: Accept exemplar sampling variability; proceed with benchmark and counter performance PRs; histograms/fixed-size next.\n\n## Action Items\n- Damien: Open community issue; schedule cross-team discussion; propose ownership models and required “keys.”\n- Tyler:\n  - Resolve scope naming review per spec; seek approvals.\n  - Propose DNS/CAA change notification/subscription approach; contribute to ops/playbooks.\n  - Provide comments on atomic map-size handling.\n- Robert:\n  - Verify GoDoc rendering for error type PR; approve.\n  - Open semantic conventions issue for “instrumented component” attribute.\n- David:\n  - Push sequence of PRs (benchmark fix, counter perf, then histogram/fixed-size).\n  - Note/mitigate soft attribute-set limit behavior, especially for cumulative aggregations.\n- Group: Review and approve PRs (observability in Trace gRPC, error type improvements, benchmark, counter performance).\n",
+    "author_association": "MEMBER",
+    "pin": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/open-telemetry/opentelemetry-go/issues/comments/3389972183/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "performed_via_github_app": null,
+    "minimized": null
+  }
+}
