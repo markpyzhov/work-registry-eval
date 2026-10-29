@@ -120,6 +120,8 @@ All runs follow the procedure in
 instead follows separate instructions for both corpora:
 [`harness/run/run-codex-rag.md`](harness/run/run-codex-rag.md).
 
+**Note:** The original `run-rounds.md` instructions state that C1 Daily Briefs were available to the Work Registry RAG arm. The dataset configuration excludes Daily Briefs from that arm. C1 Daily Briefs were available to the Directory arm; C2 has no Daily Briefs.
+
 The workspace directory of the agents should be `harness/workspaces`.
 
 Run every question-round pair in a fresh subagent session. Each subagent answers the
